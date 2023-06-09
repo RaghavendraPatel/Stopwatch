@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Square">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <script src="https://kit.fontawesome.com/dd36ae0ce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="cont">
+        <div class="progress" id="outter">
+                <div class="timer">
+                    <div id="disp">00:00.00</div>
+                    <div id="lap-disp"></div>
+                </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="230px" height="230px">
+            <defs>
+               <linearGradient id="GradientColor">
+                   <!-- <stop offset="0%" stop-color="#00d4ff" /> -->
+                   <stop offset="0%" stop-color="#24249d" />
+                   <stop offset="100%" stop-color="#06023d" />
+               </linearGradient>
+            </defs>
+            <circle cx="115" cy="115" r="110" stroke-linecap="round" id="c-progress"/>
+            <circle cx="115" cy="115" r="110" stroke-linecap="round" id="c-back" opacity="0.7"/>
+            <!-- <circle cx="65" cy="65" r="60" stroke-linecap="round" id="c-mask"/> -->
+        </svg>
+    </div>
+    <div class="lap" id="lap-history"></div>
+    <div class="btn">
+        <div id="reset-btn">
+            <i class="fa-solid fa-rotate-right" onclick="reset()" title="Reset"></i>
+        </div>
+        <div id="start-stop-btn" class="fa-3x">
+                <i class="fa-inverse fa-solid fa-circle-play" style="color: #4545ff;" onclick = "startStop()"></i>
+        </div>
+        <div id="lap-btn" title="Lap">
+            <i class="fa-regular fa-flag" onclick="lap()"></i>
+        </div>
+    </div>
+    <script src="./JS/main.js"></script>
+</body>
+</html>
