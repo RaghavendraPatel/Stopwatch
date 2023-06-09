@@ -11,6 +11,7 @@ let setLap = false;
 let timer;
 let running = false;
 
+//format milliseconds to redable format
 const formatTime = (data) => {
   return (
     String(Math.floor(data / 6000)).padStart(2, "0") + //minutes
@@ -21,6 +22,7 @@ const formatTime = (data) => {
   );
 };
 
+//play pause timer
 const startStop = () => {
   if (running == false) {
     startStopButton.innerHTML =
@@ -35,6 +37,7 @@ const startStop = () => {
   }
 };
 
+//start timer
 const start = () => {
   timer = setInterval(() => {
     circle.style.cssText = `stroke-dashoffset:${
@@ -51,10 +54,12 @@ const start = () => {
   }, 10);
 };
 
+//stop timer
 const stop = () => {
   clearInterval(timer);
 };
 
+//reset
 const reset = () => {
   if (running == false) {
     running = false;
@@ -74,6 +79,7 @@ const reset = () => {
   //rest values
 };
 
+//format lap time
 const formatLap = (data) => {
   return `<div class="lap-record">
         <p>${String(lapCount++).padStart(2, "0")}</p>
@@ -81,6 +87,8 @@ const formatLap = (data) => {
         <p>${formatTime(count)}</p>
     </div>`;
 };
+
+//display lap
 const lap = () => {
   if (count > 0) {
     if (setLap == false) {
